@@ -37,15 +37,19 @@ export const BoxInfos = styled.div`
 
   h1 {
     margin: 10px 20px;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1.75rem;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 `;
 
 export const Content = styled.div`
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -56,7 +60,7 @@ export const Content = styled.div`
     align-items: center;
 
     p {
-      font-size: 0.875rem;
+      font-size: 16px;
       font-weight: 400;
       letter-spacing: 0;
     }
@@ -80,5 +84,10 @@ export const Content = styled.div`
       background-color: #ca3433;
       transition: 0.5s;
     }
+  }
+
+  a {
+    text-decoration: underline;
+    font-size: 16px;
   }
 `;

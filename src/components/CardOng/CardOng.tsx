@@ -47,16 +47,16 @@ const CardOng: React.FC = () => {
             <h1>{point?.name}</h1>
           </BoxInfos>
           <Content>
+            <div>
+              <HomeIcon />
+              <p>{point?.location.address}</p>
+            </div>
             <a
               href={`https://maps.google.com/maps?q=${point?.location.lat},${point?.location.lng}`}
               target="_blank"
             >
               Como chegar
             </a>
-            <div>
-              <HomeIcon />
-              <p>{point?.location.address}</p>
-            </div>
             <button className="doar" onClick={() => setCart(true)}>
               Doar
             </button>
