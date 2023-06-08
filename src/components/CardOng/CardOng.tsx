@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Top, BoxInfos, Content } from "./styles";
 import { useCollectPoint } from "@/utils/context/CollectPoint";
 import HomeIcon from "@mui/icons-material/Home";
+import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import CloseIcon from "@mui/icons-material/Close";
 import { Data } from "@/pages/api/ongs";
 import { Cart } from "@/sections";
@@ -24,6 +25,13 @@ const CardOng: React.FC = () => {
   return (
     <Container>
       <Top>
+        {cart ? (
+          <button onClick={() => setCart(false)}>
+            <KeyboardReturnIcon />
+          </button>
+        ) : (
+          <div />
+        )}
         <button onClick={() => setCollectPointId(null)}>
           <CloseIcon />
         </button>
@@ -39,6 +47,12 @@ const CardOng: React.FC = () => {
             <h1>{point?.name}</h1>
           </BoxInfos>
           <Content>
+            <a
+              href={`https://maps.google.com/maps?q=${point?.location.lat},${point?.location.lng}`}
+              target="_blank"
+            >
+              Como chegar
+            </a>
             <div>
               <HomeIcon />
               <p>{point?.location.address}</p>

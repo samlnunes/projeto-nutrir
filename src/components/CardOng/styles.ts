@@ -13,13 +13,13 @@ export const Container = styled.div`
   overflow: auto;
 
   @media (max-width: 768px) {
-    width: calc(100% - 20px); 
+    width: calc(100% - 20px);
   }
 `;
 
 export const Top = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 20px;
   margin-bottom: 10px;
 
