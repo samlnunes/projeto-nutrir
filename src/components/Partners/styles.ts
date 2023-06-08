@@ -10,18 +10,17 @@ export const Container = styled.button`
   align-items: center;
   gap: 10px;
   border: none;
+  padding: 10px;
 
   img {
     max-width: 70px;
   }
 
-  span {
+  p {
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 59px;
     text-align: center;
-
     color: #101828;
   }
 `;

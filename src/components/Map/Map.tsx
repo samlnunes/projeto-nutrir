@@ -22,12 +22,18 @@ interface Point {
 const Map: React.FC = () => {
   const { setCollectPointId } = useCollectPoint();
 
-  const [center, setCenter] = useState<[number, number]>([0, 0]);
+  const [center, setCenter] = useState<[number, number]>([
+    -23.547841, -46.636444,
+  ]);
   const [points, setPoints] = useState<Point[]>([]);
   const [mapKey, setMapKey] = useState<string>("");
 
   const customIcon = new Icon({
     iconUrl: "/marker-icon.png",
+  });
+
+  const customIconLocation = new Icon({
+    iconUrl: "/icon-location.png",
   });
 
   useEffect(() => {
@@ -38,6 +44,7 @@ const Map: React.FC = () => {
           const longitude = position.coords.longitude;
 
           setCenter([latitude, longitude]);
+          handleCenterChange();
         },
         function (error) {
           console.log("Erro ao obter a localização:", error.message);
@@ -61,7 +68,7 @@ const Map: React.FC = () => {
           };
         });
 
-        setPoints(newArray)
+        setPoints(newArray);
       });
   }, []);
 
@@ -95,9 +102,11 @@ const Map: React.FC = () => {
               </Popup>
             </Marker>
           ))}
-          {/* <LayerGroup>
-            <RoutingMachine destination={points[0]} />
-          </LayerGroup> */}
+          <Marker position={center} icon={customIconLocation}>
+            <Popup>
+              <span>Sua localização</span>
+            </Popup>
+          </Marker>
         </MapContainer>
       )}
     </Container>

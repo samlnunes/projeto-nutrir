@@ -16,7 +16,7 @@ const Partners: React.FC<PartnersProps> = ({ cash, logo, name }) => {
     <>
       <Container onClick={() => setModalShow(true)}>
         <img src={logo} alt="" />
-        <span>{cash}% de desconto</span>
+        <p>{cash}% de desconto</p>
       </Container>
       <Modal open={modalShow} setClose={() => setModalShow(false)} />
     </>
