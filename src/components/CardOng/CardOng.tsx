@@ -27,13 +27,13 @@ const CardOng: React.FC = () => {
       <Top>
         {cart ? (
           <button onClick={() => setCart(false)}>
-            <KeyboardReturnIcon />
+            <KeyboardReturnIcon style={{ color: "#000" }} />
           </button>
         ) : (
           <div />
         )}
         <button onClick={() => setCollectPointId(null)}>
-          <CloseIcon />
+          <CloseIcon style={{ color: "#000" }} />
         </button>
       </Top>
       {cart ? (
