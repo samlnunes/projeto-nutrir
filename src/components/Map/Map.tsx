@@ -102,11 +102,13 @@ const Map: React.FC = () => {
               </Popup>
             </Marker>
           ))}
-          <Marker position={center} icon={customIconLocation}>
-            <Popup>
-              <span>Sua localização</span>
-            </Popup>
-          </Marker>
+          {center[0] != -23.547841 && center[1] != -46.636444 && (
+            <Marker position={center} icon={customIconLocation}>
+              <Popup>
+                <span>Sua localização</span>
+              </Popup>
+            </Marker>
+          )}
         </MapContainer>
       )}
     </Container>
