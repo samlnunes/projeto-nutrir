@@ -57,10 +57,10 @@ const CardOng: React.FC = () => {
             >
               Como chegar
             </a>
-            <button className="doar" onClick={() => setCart(true)}>
-              Doar
-            </button>
           </Content>
+          <button className="doar" onClick={() => setCart(true)}>
+            Doar
+          </button>
         </>
       )}
     </Container>
