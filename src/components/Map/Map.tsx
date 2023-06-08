@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "./styles";
 import "leaflet/dist/leaflet.css";
-import { LayerGroup, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  LayerGroup,
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+} from "react-leaflet";
 import { Icon } from "leaflet";
 import { useCollectPoint } from "@/utils/context/CollectPoint";
 import RoutingMachine from "../RoutingMachine/RoutingMachine";
@@ -41,32 +47,22 @@ const Map: React.FC = () => {
       console.log("Geolocalização não é suportada pelo seu navegador");
     }
 
-    setPoints([
-      {
-        lat: -23.55956,
-        lng: -46.59724,
-        title: "Mooca Solidária",
-        collectPointId: 1,
-      },
-      {
-        lat: -23.600344,
-        lng: -46.455792,
-        title: "IGREJA PENTECOSTAL ADONAI NISSI",
-        collectPointId: 2,
-      },
-      {
-        lat: -23.474761,
-        lng: -46.640422,
-        title: "Ong Victórias Pela Vida",
-        collectPointId: 3,
-      },
-      {
-        lat: -23.596459,
-        lng: -46.652373,
-        title: "Associação de Apoio à Criança Com Câncer",
-        collectPointId: 4,
-      },
-    ]);
+    fetch("/api/ongs")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const newArray = data.map((item: any) => {
+          return {
+            lat: item.location.lat,
+            lng: item.location.lng,
+            title: item.name,
+            collectPointId: item.id,
+          };
+        });
+
+        setPoints(newArray)
+      });
   }, []);
 
   const handleMarkerClick = (title: number) => {

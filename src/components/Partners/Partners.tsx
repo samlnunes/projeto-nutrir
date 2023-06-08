@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container } from "./styles";
+import Modal from "../Modal/Modal";
 
 export interface PartnersProps {
   name: string;
@@ -9,11 +10,16 @@ export interface PartnersProps {
 }
 
 const Partners: React.FC<PartnersProps> = ({ cash, logo, name }) => {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
-    <Container>     
-      <img src={logo} alt="" />
-      <span>{cash}% de desconto</span>
-    </Container>
+    <>
+      <Container onClick={() => setModalShow(true)}>
+        <img src={logo} alt="" />
+        <span>{cash}% de desconto</span>
+      </Container>
+      <Modal open={modalShow} setClose={() => setModalShow(false)} />
+    </>
   );
 };
 

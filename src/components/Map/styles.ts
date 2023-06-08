@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   .leaflet-container {
     height: calc(100vh - 80px);
+    margin-top: 80px;
     width: 100%;
   }
 

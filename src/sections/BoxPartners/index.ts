@@ -1,1 +1,3 @@
-export { default } from "./BoxPartners";
+import BoxPartners from "./BoxPartners";
+
+export default BoxPartners;

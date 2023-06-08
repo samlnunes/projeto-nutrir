@@ -10,7 +10,11 @@ export const Container = styled.div`
   padding: 20px 0;
   left: 10px;
   z-index: 9999;
-  overflow: auto;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: calc(100% - 20px); 
+  }
 `;
 
 export const Top = styled.div`
@@ -49,11 +53,32 @@ export const Content = styled.div`
   div {
     display: flex;
     gap: 10px;
+    align-items: center;
 
     p {
       font-size: 0.875rem;
       font-weight: 400;
       letter-spacing: 0;
+    }
+  }
+
+  .doar {
+    width: calc(50% - 40px);
+    height: 56px;
+    position: absolute;
+    bottom: 20px;
+    background-color: #ed2647;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #ca3433;
+      transition: 0.5s;
     }
   }
 `;

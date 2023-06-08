@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 100%;
   background-color: #ffffff;
   height: 100%;
@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  border: none;
 
   img {
     max-width: 70px;

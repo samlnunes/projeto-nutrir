@@ -4,11 +4,14 @@ import { Partners } from "@/components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import { useMediaQuery } from 'react-responsive';
+
 import { Autoplay } from "swiper";
 import { PartnersProps } from "@/components/Partners/Partners";
 
 const BoxPartners: React.FC = () => {
   const [partners, setPartners] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     fetch("/api/partners")
@@ -24,7 +27,7 @@ const BoxPartners: React.FC = () => {
     <Container>
       <Swiper
         spaceBetween={30}
-        slidesPerView={6}
+        slidesPerView={isMobile ? 'auto' : 6}
         loop={true}
         autoplay={{
           delay: 3000,

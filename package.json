@@ -16,6 +16,7 @@
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
+    "axios": "^1.4.0",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",
     "next": "13.4.4",
@@ -23,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
     "react-leaflet-cluster": "^2.1.0",
+    "react-responsive": "^9.0.2",
     "styled-components": "^6.0.0-rc.3",
     "swiper": "^9.3.2",
     "typescript": "5.1.3"
