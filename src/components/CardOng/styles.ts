@@ -10,7 +10,7 @@ export const Container = styled.div`
   padding: 20px 0;
   left: 10px;
   z-index: 9999;
-  overflow: hidden;
+  overflow: auto;
 
   @media (max-width: 768px) {
     width: calc(100% - 20px); 
