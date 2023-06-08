@@ -12,27 +12,6 @@ export const Container = styled.div`
   z-index: 9999;
   overflow: auto;
 
-  .doar {
-    width: calc(50% - 40px);
-    height: 56px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ed2647;
-    font-weight: 800;
-    font-size: 18px;
-    border-radius: 10px;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s;
-
-    &:hover {
-      background-color: #ca3433;
-      transition: 0.5s;
-    }
-  }
-
   @media (max-width: 768px) {
     width: calc(100% - 20px);
   }
@@ -70,7 +49,7 @@ export const BoxInfos = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 0 20px 100px 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -84,6 +63,26 @@ export const Content = styled.div`
       font-size: 16px;
       font-weight: 400;
       letter-spacing: 0;
+    }
+  }
+
+  .doar {
+    width: calc(50% - 40px);
+    height: 56px;
+    position: absolute;
+    bottom: 20px;
+    background-color: #ed2647;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #ca3433;
+      transition: 0.5s;
     }
   }
 

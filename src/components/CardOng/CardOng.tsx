@@ -57,10 +57,12 @@ const CardOng: React.FC = () => {
             >
               Como chegar
             </a>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <button className="doar" onClick={() => setCart(true)}>
+                Doar
+              </button>
+            </div>
           </Content>
-          <button className="doar" onClick={() => setCart(true)}>
-            Doar
-          </button>
         </>
       )}
     </Container>
